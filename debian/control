@@ -1,0 +1,26 @@
+Source: tmate
+Section: admin
+Priority: optional
+Maintainer: Nicolas Viennot <nicolas@viennot.biz>
+Uploaders: Nicolas Viennot <nicolas@viennot.biz>
+Build-Depends: dpkg-dev,
+               debhelper,
+               libncurses5-dev,
+               libevent-dev,
+               pkg-config,
+               dh-autoreconf,
+               libtool,
+               cmake,
+               libssl-dev,
+               zlib1g-dev,
+               ruby,
+Standards-Version: 3.9.4
+Homepage: http://tmate.io/
+Vcs-Browser: https://github.com/nviennot/tmate
+Vcs-Git: git://github.com/nviennot/tmate.git
+
+Package: tmate
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Fork of tmux, provides an instant pairing solution

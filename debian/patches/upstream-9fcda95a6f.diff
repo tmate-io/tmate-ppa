@@ -1,0 +1,19 @@
+commit 9fcda95a6f55f017536cdf24366754a2304c1059
+Author: Nicholas Marriott <nicm@openbsd.org>
+Date:   Wed Apr 10 12:20:35 2013 +0000
+
+    Set EV_WRITE for jobs or run/if-shell jobs can hang. From Chris Johnsen.
+
+diff --git a/job.c b/job.c
+index b76b334..291e000 100644
+--- a/job.c
++++ b/job.c
+@@ -109,7 +109,7 @@ job_run(const char *cmd, struct session *s,
+ 
+ 	job->event = bufferevent_new(job->fd, NULL, job_write_callback,
+ 	    job_callback, job);
+-	bufferevent_enable(job->event, EV_READ);
++	bufferevent_enable(job->event, EV_READ|EV_WRITE);
+ 
+ 	log_debug("run job %p: %s, pid %ld", job, job->cmd, (long) job->pid);
+ 	return (job);

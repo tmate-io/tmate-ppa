@@ -1,0 +1,19 @@
+commit 46c7dbef0f7803dad39db355ee866ecab8db696c
+Author: Nicholas Marriott <nicm@openbsd.org>
+Date:   Mon Apr 22 13:35:18 2013 +0000
+
+    Call recalculate_sizes() after killing window in case it is in a grouped
+    session, from Daniel Ralston.
+
+diff --git a/server-fn.c b/server-fn.c
+index c0b005e..d92754e 100644
+--- a/server-fn.c
++++ b/server-fn.c
+@@ -283,6 +283,7 @@ server_kill_window(struct window *w)
+ 		if (options_get_number(&s->options, "renumber-windows"))
+ 			session_renumber_windows(s);
+ 	}
++	recalculate_sizes();
+ }
+ 
+ int
