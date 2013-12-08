@@ -1,3 +1,9 @@
+tmate (1.8.9) precise; urgency=low
+
+  * Update to 1.8.9
+
+ -- Nicolas Viennot <nicolas@viennot.biz>  Sun, 08 Dec 2013 02:11:22 -0400
+
 tmate (1.8.8) precise; urgency=low
 
   * Update to 1.8.8
