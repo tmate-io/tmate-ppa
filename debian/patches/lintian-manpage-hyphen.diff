@@ -4,7 +4,7 @@ Forwarded: not-needed
 
 --- a/tmux.1
 +++ b/tmux.1
-@@ -466,7 +466,7 @@
+@@ -516,7 +516,7 @@ and
  .Ql -
  may be followed by an offset, for example:
  .Bd -literal -offset indent
@@ -12,8 +12,17 @@ Forwarded: not-needed
 +select-window \-t:+2
  .Ed
  .Pp
- When dealing with a session that doesn't contain sequential window indexes,
-@@ -522,13 +522,13 @@
+ In addition,
+@@ -580,7 +580,7 @@ new-window 'vi /etc/passwd'
+ .Pp
+ Will run:
+ .Bd -literal -offset indent
+-/bin/sh -c 'vi /etc/passwd'
++/bin/sh \-c 'vi /etc/passwd'
+ .Ed
+ .Pp
+ Additionally, the
+@@ -633,13 +633,13 @@ Example
  .Nm
  commands include:
  .Bd -literal -offset indent
@@ -31,7 +40,7 @@ Forwarded: not-needed
  
  bind-key R source-file ~/.tmux.conf \e; \e
  	display-message "source-file done"
-@@ -537,11 +537,11 @@
+@@ -648,11 +648,11 @@ bind-key R source-file ~/.tmux.conf \e;
  Or from
  .Xr sh 1 :
  .Bd -literal -offset indent
@@ -46,16 +55,18 @@ Forwarded: not-needed
  .Ed
  .Sh CLIENTS AND SESSIONS
  The
-@@ -954,7 +954,7 @@
+@@ -1130,8 +1130,8 @@ to copy the selection into
  .Pa /tmp
  as well as the paste buffer:
  .Bd -literal -offset indent
+-bind-key -temacs-copy C-w copy-selection -x
 -bind-key -temacs-copy C-q copy-pipe "cat >/tmp/out"
++bind-key \-temacs-copy C-w copy-selection -x
 +bind-key \-temacs-copy C-q copy-pipe "cat >/tmp/out"
  .Ed
  .Pp
  The paste buffer key pastes the first line from the top paste buffer on the
-@@ -1134,7 +1134,7 @@
+@@ -1332,7 +1332,7 @@ path in
  and the result executed as a command.
  If
  .Ar template
@@ -64,7 +75,7 @@ Forwarded: not-needed
  For the meaning of the
  .Fl F
  flag, see the
-@@ -1182,7 +1182,7 @@
+@@ -1354,7 +1354,7 @@ is replaced by the session name in
  and the result executed as a command.
  If
  .Ar template
@@ -73,7 +84,7 @@ Forwarded: not-needed
  For the meaning of the
  .Fl F
  flag, see the
-@@ -1229,7 +1229,7 @@
+@@ -1401,7 +1401,7 @@ is given, will override the default sess
  Note that
  .Ql %%
  can be used and will be replaced with the session name.
@@ -82,7 +93,7 @@ Forwarded: not-needed
  If
  .Fl c
  is given, will override the default window command.
-@@ -1272,7 +1272,7 @@
+@@ -1444,7 +1444,7 @@ is replaced by the session name and wind
  and the result executed as a command.
  If
  .Ar template
@@ -91,7 +102,7 @@ Forwarded: not-needed
  For the meaning of the
  .Fl F
  flag, see the
-@@ -1583,7 +1583,7 @@
+@@ -1766,7 +1766,7 @@ The
  option only opens a new pipe if no previous pipe exists, allowing a pipe to
  be toggled with a single key, for example:
  .Bd -literal -offset indent
@@ -100,9 +111,9 @@ Forwarded: not-needed
  .Ed
  .It Xo Ic previous-layout
  .Op Fl t Ar target-window
-@@ -2030,8 +2030,8 @@
+@@ -2308,8 +2308,8 @@ User options may have any name, so long
  and be set to any string.
- For example
+ For example:
  .Bd -literal -offset indent
 -$ tmux setw -q @foo "abc123"
 -$ tmux showw -v @foo
@@ -111,7 +122,28 @@ Forwarded: not-needed
  abc123
  .Ed
  .Pp
-@@ -2502,7 +2502,7 @@
+@@ -2352,16 +2352,16 @@ and if the option expects a string or a
+ is appended to the existing setting.
+ For example:
+ .Bd -literal -offset indent
+-set -g status-left "foo"
+-set -ag status-left "bar"
++set \-g status-left "foo"
++set \-ag status-left "bar"
+ .Ed
+ .Pp
+ Will result in
+ .Ql foobar .
+ And:
+ .Bd -literal -offset indent
+-set -g status-style "bg=red"
+-set -ag status-style "fg=blue"
++set \-g status-style "bg=red"
++set \-ag status-style "fg=blue"
+ .Ed
+ .Pp
+ Will result in a red background
+@@ -2794,7 +2794,7 @@ option.
  Examples are:
  .Bd -literal -offset indent
  #(sysctl vm.loadavg)
@@ -119,8 +151,8 @@ Forwarded: not-needed
 +#[fg=yellow,bold]#(apm \-l)%%#[default] [#S]
  .Ed
  .Pp
- Where appropriate, special character sequences may be prefixed with a number to
-@@ -2725,7 +2725,7 @@
+ The default is
+@@ -2962,7 +2962,7 @@ or later with
  or with a terminal escape sequence.
  It may be switched off globally with:
  .Bd -literal -offset indent
@@ -128,8 +160,8 @@ Forwarded: not-needed
 +set-window-option \-g automatic-rename off
  .Ed
  .Pp
- .It Ic c0-change-interval Ar interval
-@@ -3429,7 +3429,7 @@
+ .It Ic automatic-rename-format Ar format
+@@ -3848,7 +3848,7 @@ is replaced by the buffer name in
  and the result executed as a command.
  If
  .Ar template
@@ -138,7 +170,7 @@ Forwarded: not-needed
  For the meaning of the
  .Fl F
  flag, see the
-@@ -3780,29 +3780,29 @@
+@@ -4216,29 +4216,29 @@ Common examples include:
  .Pp
  Changing the default prefix key:
  .Bd -literal -offset indent
@@ -151,9 +183,9 @@ Forwarded: not-needed
  Turning the status line off, or changing its colour:
  .Bd -literal -offset indent
 -set-option -g status off
--set-option -g status-bg blue
+-set-option -g status-style bg=blue
 +set-option \-g status off
-+set-option \-g status-bg blue
++set-option \-g status-style bg=blue
  .Ed
  .Pp
  Setting other options, such as the default command,

@@ -1,3 +1,9 @@
+tmate (2.2.0) precise; urgency=low
+
+  * Update to 2.2.0
+
+ -- Nicolas Viennot <nicolas@viennot.biz>  Sat, 02 Jan 2016 15:19:18 -0600
+
 tmate (1.8.10) precise; urgency=low
 
   * Update to 1.8.10
