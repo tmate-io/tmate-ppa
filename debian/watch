@@ -1,2 +1,2 @@
 version=3
-https://github.com/nviennot/tmate/archive/(.+)\.tar\.gz debian uupdate
+https://github.com/tmate-io/tmate/tags .*/(\d?\.?\d+\.\d+[a]?)\.tar\.gz
