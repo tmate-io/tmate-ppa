@@ -24,6 +24,7 @@ Vcs-Git: git://github.com/nviennot/tmate.git
 
 Package: tmate
 Architecture: any
+Conflicts: tmate-nightly
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Fork of tmux, provides an instant pairing solution
