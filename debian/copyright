@@ -3,7 +3,7 @@ Upstream-Source: http://tmate.io/
 Upstream Author: Nicolas Viennot <nicolas@viennot.biz>
 
 Files: *
-Copyright: 
+Copyright:
  Copyright (c) 2007-2010 Nicholas Marriott <nicm@users.sourceforge.net> on
 	everything not listed thereunder
  Copyright (c) 2012 Nicolas Viennot <nicolas@viennot.biz> on
@@ -66,7 +66,7 @@ Copyright:
  Copyright (c) 1991, 1993 The Regents of the University of California on
 	queue.h
 
-License: BSD-3	
+License: BSD-3
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
@@ -97,9 +97,9 @@ Copyright:
  Copyright (c) 1996 Theo de Raadt on
 	bsd-poll.h
  Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org> on
-	imsg-buffer.c 
+	imsg-buffer.c
  Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org> on
-	imsg.c 
+	imsg.c
  Copyright (c) 2006, 2007 Pierre-Yves Ritschard <pyr@openbsd.org> and
  Copyright (c) 2006, 2007, 2008 Reyk Floeter <reyk@openbsd.org> and
  Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org> on
@@ -111,7 +111,7 @@ Copyright:
  Copyright 2002 Niels Provos <provos@citi.umich.edu> on
 	tree,h
 
-License: BSD-2	
+License: BSD-2
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
  are met:
