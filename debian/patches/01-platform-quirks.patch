@@ -8,8 +8,10 @@ Bug-Debian: http://bugs.debian.org/609333
 Bug-Debian: http://bugs.debian.org/631984
 Forwarded: not-needed
 
---- a/osdep-freebsd.c
-+++ b/osdep-freebsd.c
+Index: tmate/osdep-freebsd.c
+===================================================================
+--- tmate.orig/osdep-freebsd.c
++++ tmate/osdep-freebsd.c
 @@ -29,7 +29,9 @@
  #include <stdlib.h>
  #include <string.h>
@@ -36,8 +38,10 @@ Forwarded: not-needed
  	return (NULL);
  }
  
---- a/compat.h
-+++ b/compat.h
+Index: tmate/compat.h
+===================================================================
+--- tmate.orig/compat.h
++++ tmate/compat.h
 @@ -188,6 +188,22 @@ typedef uint64_t u_int64_t;
  #define flock(fd, op) (0)
  #endif

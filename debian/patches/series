@@ -1,2 +1,3 @@
-platform-quirks.diff
-lintian-manpage-hyphen.diff
+01-platform-quirks.patch
+02-fix-subdirs-objects-in-makefile.patch
+03-fix-spelling-error-in-binary.patch

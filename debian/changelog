@@ -1,3 +1,9 @@
+tmate (2.3.1) trusty; urgency=low
+
+  * Update to 2.3.1
+
+ -- Javier López <m@javier.io>  Sun, 13 Oct 2019 15:19:18 -0600
+
 tmate (2.2.1) precise; urgency=low
 
   * Update to 2.2.1

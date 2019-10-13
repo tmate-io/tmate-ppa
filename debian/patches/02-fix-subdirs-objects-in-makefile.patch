@@ -1,0 +1,19 @@
+Description: enable subdirs-objects in Makefile
+ Add a automake option to enable subir-objects in Makefile.am.
+Forwarded: no
+Author: Lucas Kanashiro <kanashiro.duarte@gmail.com>
+Last-Update: 2015-07-26
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+Index: tmate/Makefile.am
+===================================================================
+--- tmate.orig/Makefile.am
++++ tmate/Makefile.am
+@@ -1,5 +1,7 @@
+ # Makefile.am
+ 
++AUTOMAKE_OPTIONS=subdir-objects
++
+ # Obvious program stuff.
+ bin_PROGRAMS = tmate
+ CLEANFILES = tmate.1.mdoc tmate.1.man

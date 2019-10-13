@@ -1,8 +1,8 @@
 Source: tmate
 Section: admin
 Priority: optional
-Maintainer: Nicolas Viennot <nicolas@viennot.biz>
-Uploaders: Nicolas Viennot <nicolas@viennot.biz>
+Maintainer: Javier López <m@javier.io>
+Uploaders: Javier López <m@javier.io>
 Build-Depends: dpkg-dev(>= 1.10),
                debhelper,
                libncurses5-dev,
@@ -19,8 +19,8 @@ Build-Depends: dpkg-dev(>= 1.10),
                ruby,
 Standards-Version: 3.9.4
 Homepage: http://tmate.io/
-Vcs-Browser: https://github.com/nviennot/tmate
-Vcs-Git: git://github.com/nviennot/tmate.git
+Vcs-Browser: https://github.com/tmate-io/tmate
+Vcs-Git: git://github.com/tmate-io/tmate.git
 
 Package: tmate
 Architecture: any
